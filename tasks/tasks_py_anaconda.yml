@@ -1,6 +1,6 @@
 ---
   - name: Anaconda | check for install
-    shell: "test -e {{anaconda_dir}}/bin/conda"
+    shell: "test -e {{anaconda_current_dir}}/bin/conda"
     ignore_errors: true
     register: anaconda_installed
     tags:
@@ -13,8 +13,8 @@
         url: 'https://repo.continuum.io/archive/{{anaconda_name}}.sh'
         dest: /tmp/anaconda_installer.sh
         mode: 0755
-        tags:
-          - anaconda
+      tags:
+        - anaconda
 
     - name: Anaconda | execute web install
       shell: "/tmp/anaconda_installer.sh -b -p {{anaconda_install_dir}}"
