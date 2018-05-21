@@ -39,7 +39,7 @@
       - anaconda
 
 
-  - name: Anaconda | workaround: curl conflict
+  - name: Anaconda | workaround curl conflict
     conda: name=curl state=absent  executable="{{ anaconda_conda_bin }}""
     become: yes
     tags:
