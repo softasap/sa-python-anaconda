@@ -23,7 +23,7 @@
         - anaconda
 
     - name: Anaconda | Link current
-      file: src="{{anaconda_install_dir}}" dest="{{anaconda_link_dir}}" state=link
+      file: src="{{anaconda_install_dir}}" dest="{{anaconda_current_dir}}" state=link
       become: yes
       tags:
         - anaconda
