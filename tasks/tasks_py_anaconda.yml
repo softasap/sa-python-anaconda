@@ -1,6 +1,6 @@
 ---
   - name: Anaconda | check for install
-    shell: "test -e {{anaconda_dir}}/bin/conda"
+    shell: "test -e {{anaconda_current_dir}}/bin/conda"
     ignore_errors: true
     register: anaconda_installed
     tags:
@@ -13,8 +13,8 @@
         url: 'https://repo.continuum.io/archive/{{anaconda_name}}.sh'
         dest: /tmp/anaconda_installer.sh
         mode: 0755
-        tags:
-          - anaconda
+      tags:
+        - anaconda
 
     - name: Anaconda | execute web install
       shell: "/tmp/anaconda_installer.sh -b -p {{anaconda_install_dir}}"
@@ -23,7 +23,7 @@
         - anaconda
 
     - name: Anaconda | Link current
-      file: src="{{anaconda_install_dir}}" dest="{{anaconda_link_dir}}" state=link
+      file: src="{{anaconda_install_dir}}" dest="{{anaconda_current_dir}}" state=link
       become: yes
       tags:
         - anaconda
@@ -39,8 +39,8 @@
       - anaconda
 
 
-  - name: Anaconda | workaround: curl conflict
-    conda: name=curl state=absent  executable="{{ anaconda_conda_bin }}""
+  - name: Anaconda | workaround curl conflict
+    conda: name=curl state=absent  executable="{{ anaconda_conda_bin }}"
     become: yes
     tags:
       - anaconda
