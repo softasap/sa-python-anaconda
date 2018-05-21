@@ -1,0 +1,3 @@
+---
+# tasks file for sa-python-anaconda
+  - include_tasks: tasks_py_anaconda.yml
