@@ -1,0 +1,42 @@
+---
+- hosts: www
+  gather_facts: False
+
+  vars:
+    - root_dir: ..
+    - box_option_install_python2: True
+    - box_option_install_git: True
+    - box_option_install_python3: True
+    - box_option_install_anaconda: True
+    - box_option_install_nodejs: True
+
+  pre_tasks:
+    - debug: msg="Pre tasks section"
+
+    - name: ANSIBLE PYTHON | install python 2
+      raw: test -e /usr/bin/python || (apt -qqy update && apt install -qy python-minimal)
+      become: yes
+
+    - name:  UNPRIVILEGED USERS | Get acl dependency (ansible unprivileged user operations magic)
+      apt: pkg="acl"
+      become: yes
+
+    - name: gather facts
+      setup:
+
+  roles:
+     - {
+         role: "sa-python-anaconda",
+         anaconda_version: '2019.03',
+         anaconda_python: 3, # 2|3
+         option_anaconda_addtoprofile: False,
+         option_anaconda_update_packages: True,
+         anaconda_group: jupyter,
+         anaconda_base_dir: /usr/local,
+         anaconda_additional_packages: []
+       }
+
+
+  tasks:
+
+    - debug: msg="Tasks section"
