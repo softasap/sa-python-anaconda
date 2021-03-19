@@ -1,5 +1,5 @@
 ---
-  #  sa-python-anaconda v 1.2.0
+  #  sa_python_anaconda v 1.3.0
   - name: Anaconda | check for install
     command: "test -e {{ anaconda_current_dir }}/bin/conda"
     ignore_errors: true
@@ -62,7 +62,7 @@
 
   - name: Anaconda | add to profile
     template:
-      src: "{{ role_dir }}/templates/anaconda_profile.sh.j2"
+      src: "{{ role_path }}/templates/anaconda_profile.sh.j2"
       dest: "/etc/profile.d/anaconda_profile.sh"
       mode: "0644"
     when:  option_anaconda_addtoprofile

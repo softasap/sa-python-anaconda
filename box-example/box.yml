@@ -26,7 +26,7 @@
 
   roles:
      - {
-         role: "sa-python-anaconda",
+         role: "sa_python_anaconda",
          anaconda_version: '2019.03',
          anaconda_python: 3, # 2|3
          option_anaconda_addtoprofile: False,

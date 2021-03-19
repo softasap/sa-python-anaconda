@@ -1,2 +1,2 @@
-- src: softasap.sa-python-anaconda
-  name: sa-python-anaconda
+- src: softasap.sa_python_anaconda
+  name: sa_python_anaconda
