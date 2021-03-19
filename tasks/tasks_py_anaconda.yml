@@ -8,6 +8,15 @@
     tags:
       - anaconda
 
+  - name: Anaconda | install installer dependencies
+    package:
+      name: bzip2
+      state: present
+    when: anaconda_installed is failed
+    become: yes
+    tags:
+      - anaconda
+
   - block:
 
     - name: Anaconda | get web install
