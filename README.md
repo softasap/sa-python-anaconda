@@ -1,4 +1,4 @@
-sa-python-anaconda
+sa_python_anaconda
 ==================
 
 [![Build Status](https://travis-ci.org/softasap/sa-python-anaconda.svg?branch=master)](https://travis-ci.org/softasap/sa-python-anaconda)
