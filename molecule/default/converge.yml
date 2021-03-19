@@ -12,5 +12,5 @@
 
   roles:
      - {
-        role: "sa_python_anaconda"
+        role: "sa-python-anaconda"
        }
