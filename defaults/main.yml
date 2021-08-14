@@ -1,21 +1,18 @@
 ---
-# defaults file for sa-python-anaconda
-
-role_dir: "{{role_path}}"
-
+# defaults file for sa_python_anaconda
 anaconda_version: '5.1.0'
 anaconda_python: 3 # 2|3
 
-anaconda_distribution: '{{ansible_system}}-{{ansible_machine}}'
-anaconda_name : 'Anaconda{{anaconda_python}}-{{anaconda_version}}-{{anaconda_distribution}}'
+anaconda_distribution: '{{ ansible_system }}-{{ ansible_machine }}'
+anaconda_name: 'Anaconda{{ anaconda_python }}-{{ anaconda_version }}-{{ anaconda_distribution }}'
 
 option_anaconda_addtoprofile: False
 option_anaconda_update_packages: True
 
 anaconda_base_dir: /usr/local
-anaconda_install_dir: '{{anaconda_base_dir}}/{{anaconda_name}}'
-anaconda_current_dir: "{{anaconda_base_dir}}/anaconda"
+anaconda_install_dir: '{{ anaconda_base_dir }}/{{ anaconda_name }}'
+anaconda_current_dir: "{{ anaconda_base_dir }}/anaconda"
 
 anaconda_additional_packages: []
 
-anaconda_conda_bin: '{{anaconda_current_dir}}/bin/conda'
+anaconda_conda_bin: '{{ anaconda_current_dir }}/bin/conda'

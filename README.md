@@ -1,6 +1,6 @@
-sa-python-anaconda
+sa_python_anaconda
 ==================
-
+[![Build Status](https://github.com/softasap/sa-python-anaconda/workflows/CI/badge.svg?event=push)](https://github.com/softasap/sa-python-anaconda/actions?query=workflow%3ACI)
 [![Build Status](https://travis-ci.org/softasap/sa-python-anaconda.svg?branch=master)](https://travis-ci.org/softasap/sa-python-anaconda)
 
 
@@ -12,7 +12,7 @@ Simple
 ```YAML
 
      - {
-         role: "sa-python-anaconda"
+         role: "sa_python_anaconda"
        }
 
 
@@ -23,7 +23,7 @@ Advanced
 ```YAML
 
      - {
-         role: "sa-python-anaconda"
+         role: "sa_python_anaconda"
        }
 
 
@@ -37,20 +37,20 @@ Credits:
 Usage with ansible galaxy workflow
 ----------------------------------
 
-If you installed the `sa-python-anaconda` role using the command
+If you installed the `sa_python_anaconda` role using the command
 
 
 `
-   ansible-galaxy install softasap.sa-python-anaconda
+   ansible-galaxy install softasap.sa_python_anaconda
 `
 
-the role will be available in the folder `library/softasap.sa-python-anaconda`
+the role will be available in the folder `library/softasap.sa_python_anaconda`
 Please adjust the path accordingly.
 
 ```YAML
 
      - {
-         role: "softasap.sa-python-anaconda"
+         role: "softasap.sa_python_anaconda"
        }
 
 ```
