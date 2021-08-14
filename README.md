@@ -1,6 +1,6 @@
 sa_python_anaconda
 ==================
-
+[![Build Status](https://github.com/softasap/sa-python-anaconda/workflows/CI/badge.svg?event=push)](https://github.com/softasap/sa-python-anaconda/actions?query=workflow%3ACI)
 [![Build Status](https://travis-ci.org/softasap/sa-python-anaconda.svg?branch=master)](https://travis-ci.org/softasap/sa-python-anaconda)
 
 
